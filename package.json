@@ -1,0 +1,42 @@
+{
+  "name": "scutch_api",
+  "version": "0.0.1",
+  "description": "Scutch Production API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "migrate": "cross-env MIGRATE=true npx sequelize-cli db:migrate",
+    "migrate-undo": "cross-env MIGRATE=true npx sequelize-cli db:migrate:undo",
+    "migrate-create": "cross-env MIGRATE=true npx sequelize-mig migration:make -n",
+    "migrate-preview": "cross-env MIGRATE=true npx sequelize-mig migration:make --preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AKR4log/scutch_api.git"
+  },
+  "author": "akr4log",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AKR4log/scutch_api/issues"
+  },
+  "homepage": "https://github.com/AKR4log/scutch_api#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cls-hooked": "^4.2.2",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "date-countdown": "^1.1.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.19.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "sequelize-cli": "^6.4.1"
+  }
+}
