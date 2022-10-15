@@ -1,7 +1,7 @@
 {
   "name": "scutch_api",
   "version": "0.0.1",
-  "description": "Scutch Production API",
+  "description": "Scutch Product API",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
