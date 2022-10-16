@@ -72,18 +72,21 @@ class UserController {
     }
   }
 
-  // async subscribe(req, res, next) {
-  //   try {
-  //     const { idolUsername, subUsername } = req.body;
-  //     const idol = await models.users.findOne({ where: { username: idolUsername } });
-  //     const subscriber = await models.users.findOne({ where: { username: subUsername } });
-  //     idol.addSubscribe(subscriber);
-  //     return res.status(200).send(idol);
-  //   }
-  //   catch(err){
-  //     console.log(err);
-  //   }
-  // }
+  async set_bio(req, res, next) {
+    try {
+      const { bio } = req.body;
+      const user = await models.user_details.create({
+        bio: bio,
+        userId: req.user.id
+      });
+      const userAuth = await models.users.findOne({ where:  {id:req.user.id}  });
+      userAuth.setUserDetails(user);
+      return res.status(200).send(userAuth);
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
 
   // async unSubscribe(req, res, next) {
   //   try {
